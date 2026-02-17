@@ -2,16 +2,14 @@ import csv
 import os
 from datetime import datetime
 
-def save_rates_to_csv(data, filename='data/exchange_rates.csv'):
+def save_rates_to_csv(base, rates, filename='data/exchange_rates.csv'):
 
     # Checking if data was returned by API, if not - exit function
 
-    if not data:
+    if not base or not rates:
         print('No data to save.')
         return
 
-    rates = data['rates']
-    base = data['base_code']
     date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
     # Checking if file already exists
@@ -24,12 +22,12 @@ def save_rates_to_csv(data, filename='data/exchange_rates.csv'):
         # Adding a header if creating file for the first time
 
         if not if_file_exists:
-            header = [date, base] + list(rates.keys())
-            writer.writerow(header)
+            writer.writerow( ['date', 'base', 'currency', 'rate'])
 
         # Adding a row
 
-        row = [date, base] + list(rates.values())
-        writer.writerow(row)
+        for currency, rate in rates.items():
+            writer.writerow([date, base, currency, rate])
 
-    print('Data successfully saved to csv file.')
+
+    print(f'Data successfully saved to csv file {filename}.')

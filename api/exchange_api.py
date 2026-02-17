@@ -2,8 +2,8 @@ import requests
 
 BASE_URL = 'https://open.er-api.com/v6/latest/'
 
-def get_latest_rate(base_currency):
-    url = BASE_URL + base_currency
+def get_latest_rate(base):
+    url = BASE_URL + base.upper()
 
     try:
         response = requests.get(url, timeout=5)
@@ -11,10 +11,10 @@ def get_latest_rate(base_currency):
         data = response.json()
 
         if data.get("result") == "success":
-            return data
+            return  data.get('base_code'), data.get('rates')
         else:
             print('API returned an error.')
-            return None
+            return None, None
 
     except requests.exceptions.Timeout:
         print('Error: The request timed out.')
@@ -25,4 +25,4 @@ def get_latest_rate(base_currency):
     except Exception as e:
         print(f'Unexpected error: {e}')
 
-    return None
+    return None, None
