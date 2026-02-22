@@ -2,7 +2,7 @@ import requests
 
 BASE_URL = 'https://open.er-api.com/v6/latest/'
 
-def get_latest_rate(base):
+def get_latest_rate_by_api(base):
     url = BASE_URL + base.upper()
 
     try:

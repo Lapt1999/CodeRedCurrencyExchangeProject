@@ -17,3 +17,11 @@ def buy(amount,rate):
 
 def sell(amount, rate):
     return amount / rate
+
+def process_transaction(action, amount, rate):
+    if action == 'buy':
+        return buy(amount, rate)
+    elif action == 'sell':
+        return sell(amount, rate)
+    else:
+        raise ValueError('Invalid action')
