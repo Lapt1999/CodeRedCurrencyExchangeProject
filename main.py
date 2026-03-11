@@ -51,7 +51,7 @@ def main():
 
     # --------------------------------- ASK TO CONTINUE -------------------------------------------------------------
 
-        if get_repeat('Do you want to perform another conversion? (yes/no): ') == 'no':
+        if get_repeat() == 'no':
             break
 
 

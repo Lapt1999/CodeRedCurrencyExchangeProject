@@ -46,9 +46,9 @@ def get_amount(currency):
         except ValueError:
             print('Error: please enter a numeric value.')
 
-def get_repeat(prompt):
+def get_repeat():
     while True:
-        repeat = input(prompt).strip().lower()
+        repeat = input('Do you want to perform another conversion? (yes/no): ').strip().lower()
         if repeat in ('yes', 'no'):
             return repeat
         print('Please enter either "yes" or "no".')
