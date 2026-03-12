@@ -4,21 +4,30 @@ import pytest
 
 from services.rate_service import get_rates, validate_target_currency, RateServiceError, UnsupportedCurrencyError
 
-@patch('services.rate_service.get_latest_rate_by_api')
-def test_get_rates_success(mock_api):
-    mock_api.return_value = ('USD', {'EUR': 0.9, 'JPY': 140})
 
-    base, rates = get_rates('USD')
+def test_get_rates_success():
+    base = 'USD'
+    rates = {'EUR': 0.9}
 
-    assert base == 'USD'
-    assert rates == {'EUR': 0.9, 'JPY': 140}
+    result_base, result_rates = get_rates(base, rates)
 
-@patch('services.rate_service.get_latest_rate_by_api')
-def test_get_rates_failure(mock_api):
-    mock_api.return_value = (None, None)
+    assert result_base == 'USD'
+    assert result_rates == {'EUR': 0.9}
+
+
+def test_get_rates_base_none():
+    rates = {'EUR': 0.9}
 
     with pytest.raises(RateServiceError):
-        get_rates('USD')
+        get_rates(None, rates)
+
+
+def test_get_rates_rates_empty():
+    base = 'USD'
+
+    with pytest.raises(RateServiceError):
+        get_rates(base, None)
+
 
 def test_validate_target_currency_success():
     rates = {'EUR': 0.9, 'JPY': 140}
@@ -29,3 +38,11 @@ def test_validate_target_currency_failure():
 
     with pytest.raises(UnsupportedCurrencyError):
         validate_target_currency('ABC', rates, 'USD')
+
+
+def test_validate_target_currency_error_message():
+    rates = {'EUR': 0.9, 'JPY': 140}
+    with pytest.raises(UnsupportedCurrencyError) as er:
+        validate_target_currency('ABC', rates, 'USD')
+
+    assert 'ABC is not supported' in str(er.value)

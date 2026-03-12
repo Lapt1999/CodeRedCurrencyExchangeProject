@@ -1,9 +1,9 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-
+from services.rate_lolader import initialize_currencies_and_display
 from storage.data_storage import save_rates_to_csv
-from services.converter import calculate_cross_rate,process_transaction
+from services.converter import safe_process_transaction
 from ui.input_handler import (get_action, get_amount, get_repeat, get_valid_target_currency,
                               get_valid_source_currency)
 from ui.output_handler import display_transaction, display_rates
@@ -11,6 +11,12 @@ from ui.output_handler import display_transaction, display_rates
 def main():
 
     print('Welcome to Currency Exchange App')
+
+    base, rates = initialize_currencies_and_display()
+
+    if not base or not rates:
+        return
+
 
     while True:
 
@@ -20,7 +26,7 @@ def main():
     # ---------------------------- SOURCE CURRENCY -----------------------------------------------------------------
 
         # Ask user for source currency, validating input
-        base, rates, source_currency = get_valid_source_currency()
+        source_currency = get_valid_source_currency(base, rates)
 
     # ---------------------------- TARGET CURRENCY -----------------------------------------------------------------
 
@@ -34,11 +40,8 @@ def main():
 
     # --------------------------------- CALCULATION -----------------------------------------------------------------
 
-        # Calculating an exchange rate
-        rate = calculate_cross_rate(source_currency, target_currency, base, rates)
-
-        # Performing calculation depending on the chosen action
-        result = process_transaction(action, amount, rate)
+        # Calculating an exchange rate depending on the chosen action
+        status, result = safe_process_transaction(source_currency, target_currency, base, rates, amount, action)
 
         # Displaying the conversion result
         display_transaction(action, source_currency, target_currency, amount, result)
@@ -52,6 +55,7 @@ def main():
     # --------------------------------- ASK TO CONTINUE -------------------------------------------------------------
 
         if get_repeat() == 'no':
+            print('Thank you for using Currency Exchange App')
             break
 
 

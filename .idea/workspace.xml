@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b6350b0-cb8f-4f93-86cc-d905d5c3aaf2" name="Changes" comment="Clearer main, architecture improvements">
-      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_converter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_data_storage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_exchhange_api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_input_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_output_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_rate_service.py" afterDir="false" />
+    <list default="true" id="0b6350b0-cb8f-4f93-86cc-d905d5c3aaf2" name="Changes" comment="unit tests added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/rate_lolader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/orders.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/rate_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/rate_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/trend_analysis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_converter.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_converter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_data_storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_data_storage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_input_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_input_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_output_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_output_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_rate_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_rate_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/input_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/input_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/output_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/output_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +61,20 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python tests.Python tests for tests.test_converter.test_all.executor": "Run",
     "Python tests.Python tests for tests.test_converter.test_buy.executor": "Run",
+    "Python tests.Python tests for tests.test_converter.test_buy_calculation.executor": "Run",
+    "Python tests.Python tests for tests.test_converter.test_calculate_cross_rate_other_currency.executor": "Run",
+    "Python tests.Python tests for tests.test_converter.test_calculate_cross_rate_other_currency_to_base.executor": "Run",
+    "Python tests.Python tests for tests.test_converter.test_calculate_cross_rate_same_currency_return_1.executor": "Run",
+    "Python tests.Python tests for tests.test_converter.test_cross_currency_conversion.executor": "Run",
+    "Python tests.Python tests for tests.test_converter.test_process_transaction_buy.executor": "Run",
+    "Python tests.Python tests for tests.test_converter.test_process_transaction_invalid_action.executor": "Run",
+    "Python tests.Python tests for tests.test_converter.test_process_transaction_sell.executor": "Run",
+    "Python tests.Python tests for tests.test_converter.test_safe_process_transaction_success.executor": "Run",
+    "Python tests.Python tests for tests.test_converter.test_safe_process_transaction_success_unexpected_error.executor": "Run",
+    "Python tests.Python tests for tests.test_converter.test_safe_process_transaction_success_value_error.executor": "Run",
     "Python tests.Python tests for tests.test_converter.test_sell.executor": "Run",
+    "Python tests.Python tests for tests.test_converter.test_source_not_in_rates_raises.executor": "Run",
+    "Python tests.Python tests for tests.test_converter.test_target_not_in_rates_raises.executor": "Run",
     "Python tests.Python tests for tests.test_data_storage.test_save_rates_to_csv_append_file.executor": "Run",
     "Python tests.Python tests for tests.test_data_storage.test_save_rates_to_csv_no_data.executor": "Run",
     "Python tests.Python tests for tests.test_data_storage.test_save_rates_to_scv_create_file.executor": "Run",
@@ -70,17 +87,37 @@
     "Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api_timeout.executor": "Run",
     "Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api_unexpected_error.executor": "Run",
     "Python tests.Python tests for tests.test_input_handler.test_get_action_buy.executor": "Run",
+    "Python tests.Python tests for tests.test_input_handler.test_get_action_direct.executor": "Run",
     "Python tests.Python tests for tests.test_input_handler.test_get_action_sell.executor": "Run",
+    "Python tests.Python tests for tests.test_input_handler.test_get_amount_valid.executor": "Run",
+    "Python tests.Python tests for tests.test_input_handler.test_get_currency.executor": "Run",
     "Python tests.Python tests for tests.test_input_handler.test_get_repeat.executor": "Run",
     "Python tests.Python tests for tests.test_input_handler.test_get_repeat_no.executor": "Run",
     "Python tests.Python tests for tests.test_input_handler.test_get_repeat_yes.executor": "Run",
+    "Python tests.Python tests for tests.test_input_handler.test_get_valid_source_currency_base.executor": "Run",
+    "Python tests.Python tests for tests.test_input_handler.test_get_valid_source_currency_from_rates.executor": "Run",
+    "Python tests.Python tests for tests.test_input_handler.test_get_valid_source_currency_retry.executor": "Run",
+    "Python tests.Python tests for tests.test_output_handler.test_display_currencies_only.executor": "Run",
+    "Python tests.Python tests for tests.test_output_handler.test_display_currencies_only_empty.executor": "Run",
     "Python tests.Python tests for tests.test_output_handler.test_display_rates.executor": "Run",
+    "Python tests.Python tests for tests.test_output_handler.test_display_rates_empty.executor": "Run",
     "Python tests.Python tests for tests.test_output_handler.test_display_transaction.executor": "Run",
+    "Python tests.Python tests for tests.test_rate_service.test_get_rates_base_none.executor": "Run",
+    "Python tests.Python tests for tests.test_rate_service.test_get_rates_rates_empty.executor": "Run",
+    "Python tests.Python tests for tests.test_rate_service.test_get_rates_success.executor": "Run",
+    "Python tests.Python tests for tests.test_rate_service.test_validate_target_currency_error_message.executor": "Run",
     "Python tests.Python tests for tests.test_rate_service.test_validate_target_currency_failure.executor": "Run",
     "Python tests.Python tests for tests.test_rate_service.test_validate_target_currency_success.executor": "Run",
+    "Python tests.Python tests in test_converter.py.executor": "Run",
+    "Python tests.Python tests in test_data_storage.py.executor": "Run",
+    "Python tests.Python tests in test_exchhange_api.py.executor": "Run",
+    "Python tests.Python tests in test_input_handler.py.executor": "Run",
+    "Python tests.Python tests in test_output_handler.py.executor": "Run",
+    "Python tests.Python tests in test_rate_service.py.executor": "Run",
     "Python tests.Python tests in tests.executor": "Run",
     "Python.exchange_api.executor": "Run",
     "Python.main.executor": "Run",
+    "Python.output_handler.executor": "Run",
     "Python.test_converter.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -97,8 +134,8 @@
       <recent name="C:\Users\Anna\PycharmProjects\CodeRedCurrencyExchangeProject\ui" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for tests.test_data_storage.test_save_rates_to_csv_append_file">
-    <configuration name="Python tests for tests.test_data_storage.test_save_rates_to_csv_append_file" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="Python tests for tests.test_output_handler.test_display_currencies_only_empty" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="CodeRedCurrencyExchangeProject" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -108,14 +145,13 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_data_storage.test_save_rates_to_csv_append_file&quot;" />
+      <option name="_new_target" value="&quot;tests.test_output_handler.test_display_currencies_only_empty&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.test_data_storage.test_save_rates_to_csv_no_data" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_rate_service.test_get_rates_base_none" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="CodeRedCurrencyExchangeProject" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -125,14 +161,13 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_data_storage.test_save_rates_to_csv_no_data&quot;" />
+      <option name="_new_target" value="&quot;tests.test_rate_service.test_get_rates_base_none&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.test_data_storage.test_save_rates_to_scv_create_file" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_rate_service.test_get_rates_rates_empty" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="CodeRedCurrencyExchangeProject" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -142,14 +177,13 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_data_storage.test_save_rates_to_scv_create_file&quot;" />
+      <option name="_new_target" value="&quot;tests.test_rate_service.test_get_rates_rates_empty&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.test_output_handler.test_display_rates" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_rate_service.test_get_rates_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="CodeRedCurrencyExchangeProject" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,14 +193,13 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_output_handler.test_display_rates&quot;" />
+      <option name="_new_target" value="&quot;tests.test_rate_service.test_get_rates_success&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for tests.test_output_handler.test_display_transaction" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for tests.test_rate_service.test_validate_target_currency_error_message" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="CodeRedCurrencyExchangeProject" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -176,27 +209,25 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_output_handler.test_display_transaction&quot;" />
+      <option name="_new_target" value="&quot;tests.test_rate_service.test_validate_target_currency_error_message&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for tests.test_data_storage.test_save_rates_to_csv_append_file" />
-        <item itemvalue="Python tests.Python tests for tests.test_data_storage.test_save_rates_to_scv_create_file" />
-        <item itemvalue="Python tests.Python tests for tests.test_data_storage.test_save_rates_to_csv_no_data" />
-        <item itemvalue="Python tests.Python tests for tests.test_output_handler.test_display_rates" />
-        <item itemvalue="Python tests.Python tests for tests.test_output_handler.test_display_transaction" />
+        <item itemvalue="Python tests.Python tests for tests.test_rate_service.test_validate_target_currency_error_message" />
+        <item itemvalue="Python tests.Python tests for tests.test_rate_service.test_get_rates_rates_empty" />
+        <item itemvalue="Python tests.Python tests for tests.test_rate_service.test_get_rates_base_none" />
+        <item itemvalue="Python tests.Python tests for tests.test_rate_service.test_get_rates_success" />
+        <item itemvalue="Python tests.Python tests for tests.test_output_handler.test_display_currencies_only_empty" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.30387.173" />
         <option value="bundled-python-sdk-4762d8aabb82-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.30387.173" />
       </set>
     </attachedChunks>
@@ -222,7 +253,10 @@
       <workItem from="1771972753597" duration="309000" />
       <workItem from="1772389790836" duration="7046000" />
       <workItem from="1772473743634" duration="10275000" />
-      <workItem from="1773226191089" duration="8446000" />
+      <workItem from="1773226191089" duration="8795000" />
+      <workItem from="1773250264657" duration="4890000" />
+      <workItem from="1773258511398" duration="69000" />
+      <workItem from="1773305227024" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -264,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771790513392</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="unit tests added">
+      <option name="closed" value="true" />
+      <created>1773236042592</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1773236042592</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -276,7 +318,8 @@
     <MESSAGE value="Calculation logic (basic version) + user input validations" />
     <MESSAGE value="The whole project" />
     <MESSAGE value="Clearer main, architecture improvements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clearer main, architecture improvements" />
+    <MESSAGE value="unit tests added" />
+    <option name="LAST_COMMIT_MESSAGE" value="unit tests added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CodeRedCurrencyExchangeProject$.coverage" NAME=" Coverage Results" MODIFIED="1773235981037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

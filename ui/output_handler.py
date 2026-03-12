@@ -6,3 +6,9 @@ def display_rates(base, rates):
     print('\nExchange rates\n')
     for currency, rate in rates.items():
         print(f'{currency}: {rate}')
+
+def display_currencies_only(base, rates):
+    print(f'\nSupported currencies for conversion:')
+    print(base)
+    for currency in rates.keys():
+        print(currency)

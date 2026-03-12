@@ -40,6 +40,3 @@ def test_save_rates_to_csv_append_file(tmp_path):
 
     assert reader[0] == ['date', 'base', 'currency', 'rate']
     assert len(reader) == 3
-
-
-

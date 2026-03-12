@@ -1,4 +1,3 @@
-from api.exchange_api import get_latest_rate_by_api
 
 class RateServiceError(Exception):
     pass
@@ -6,8 +5,7 @@ class RateServiceError(Exception):
 class UnsupportedCurrencyError(Exception):
     pass
 
-def get_rates(source_currency):
-    base, rates = get_latest_rate_by_api(source_currency)
+def get_rates(base,rates):
     if base is None or rates is None:
         raise RateServiceError('Failed to get exchange rates. Please check the currency code and try again.')
     return base, rates
