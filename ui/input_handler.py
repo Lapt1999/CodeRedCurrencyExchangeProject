@@ -45,7 +45,7 @@ def get_amount(currency):
 
 def get_repeat():
     while True:
-        repeat = input('Do you want to perform another conversion? (yes/no): ').strip().lower()
+        repeat = input('\nDo you want to perform another conversion? (yes/no): ').strip().lower()
         if repeat in ('yes', 'no'):
             return repeat
         print('Please enter either "yes" or "no".')

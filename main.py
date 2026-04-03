@@ -4,13 +4,15 @@
 from services.rate_lolader import initialize_currencies_and_display
 from storage.data_storage import save_rates_to_csv
 from services.converter import safe_process_transaction
+from services.trend_service import analyze_and_suggest
 from ui.input_handler import (get_action, get_amount, get_repeat, get_valid_target_currency,
                               get_valid_source_currency)
-from ui.output_handler import display_transaction, display_rates
+from ui.output_handler import display_transaction
+from visualization.charts import all_charts
 
 def main():
 
-    print('Welcome to Currency Exchange App')
+    print('\nWelcome to Currency Exchange App')
 
     base, rates = initialize_currencies_and_display()
 
@@ -46,16 +48,21 @@ def main():
         # Displaying the conversion result
         display_transaction(action, source_currency, target_currency, amount, result)
 
-        # Displaying all rates
-        display_rates(base, rates)
-
         # Saving data to csv
         save_rates_to_csv(base, rates)
+
+        # Displaying a chart for target currency
+
+        all_charts(base,source_currency, target_currency)
+
+        # Analyzing a trend and displaying recommendation
+
+        analyze_and_suggest(base, source_currency, target_currency)
 
     # --------------------------------- ASK TO CONTINUE -------------------------------------------------------------
 
         if get_repeat() == 'no':
-            print('Thank you for using Currency Exchange App')
+            print('\nThank you for using Currency Exchange App')
             break
 
 

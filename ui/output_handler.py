@@ -8,7 +8,13 @@ def display_rates(base, rates):
         print(f'{currency}: {rate}')
 
 def display_currencies_only(base, rates):
-    print(f'\nSupported currencies for conversion:')
-    print(base)
-    for currency in rates.keys():
-        print(currency)
+    print(f'\nSupported currencies for conversion:\n')
+
+    currencies = list(rates.keys())
+    per_row = 48
+
+    for i in range (0, len(currencies), per_row):
+        row = currencies[i:i+per_row]
+        print(' '.join(row))
+
+    print('')

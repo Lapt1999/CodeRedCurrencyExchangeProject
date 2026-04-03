@@ -85,8 +85,3 @@ def test_get_valid_source_currency_from_rates(mock_input):
 def test_get_valid_source_currency_retry(mock_input):
     result = get_valid_source_currency('USD', {'EUR': 0.9})
     assert result == 'USD'
-
-
-
-
-

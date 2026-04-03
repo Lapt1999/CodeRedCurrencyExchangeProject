@@ -30,4 +30,4 @@ def save_rates_to_csv(base, rates, filename='data/exchange_rates.csv'):
             writer.writerow([date, base, currency, rate])
 
 
-    print(f'Data successfully saved to csv file {filename}.')
+    print(f'\nData successfully saved to csv file {filename}.')
