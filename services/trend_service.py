@@ -25,11 +25,11 @@ def analyze_trend(rates):
 
 def get_recommendation(trend):
     if trend == 'UP':
-        return 'Rate is increasing. Consider SELLING'
+        return 'Rate is increasing. Consider SELLING\n'
     elif trend == 'DOWN':
-        return 'Rate is decreasing. Consider BUYING'
+        return 'Rate is decreasing. Consider BUYING\n'
     else:
-        return 'Rate is stable. No strong signal'
+        return 'Rate is stable. No strong signal\n'
 
 
 def analyze_and_suggest(base, source, target):

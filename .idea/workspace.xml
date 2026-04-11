@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b6350b0-cb8f-4f93-86cc-d905d5c3aaf2" name="Changes" comment="conversion logic updated, unit tests added">
-      <change afterPath="$PROJECT_DIR$/services/trend_service.py" afterDir="false" />
+    <list default="true" id="0b6350b0-cb8f-4f93-86cc-d905d5c3aaf2" name="Changes" comment="Charts added">
+      <change afterPath="$PROJECT_DIR$/services/order_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/storage/order_storage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/rate_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/rate_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/data_storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/storage/data_storage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_input_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_input_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/trend_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/trend_service.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/input_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/input_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/output_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/output_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/visualization/charts.py" beforeDir="false" afterPath="$PROJECT_DIR$/visualization/charts.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,83 +49,85 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.Python tests for tests.test_converter.test_all.executor": "Run",
-    "Python tests.Python tests for tests.test_converter.test_buy.executor": "Run",
-    "Python tests.Python tests for tests.test_converter.test_buy_calculation.executor": "Run",
-    "Python tests.Python tests for tests.test_converter.test_calculate_cross_rate_other_currency.executor": "Run",
-    "Python tests.Python tests for tests.test_converter.test_calculate_cross_rate_other_currency_to_base.executor": "Run",
-    "Python tests.Python tests for tests.test_converter.test_calculate_cross_rate_same_currency_return_1.executor": "Run",
-    "Python tests.Python tests for tests.test_converter.test_cross_currency_conversion.executor": "Run",
-    "Python tests.Python tests for tests.test_converter.test_process_transaction_buy.executor": "Run",
-    "Python tests.Python tests for tests.test_converter.test_process_transaction_invalid_action.executor": "Run",
-    "Python tests.Python tests for tests.test_converter.test_process_transaction_sell.executor": "Run",
-    "Python tests.Python tests for tests.test_converter.test_safe_process_transaction_success.executor": "Run",
-    "Python tests.Python tests for tests.test_converter.test_safe_process_transaction_success_unexpected_error.executor": "Run",
-    "Python tests.Python tests for tests.test_converter.test_safe_process_transaction_success_value_error.executor": "Run",
-    "Python tests.Python tests for tests.test_converter.test_sell.executor": "Run",
-    "Python tests.Python tests for tests.test_converter.test_source_not_in_rates_raises.executor": "Run",
-    "Python tests.Python tests for tests.test_converter.test_target_not_in_rates_raises.executor": "Run",
-    "Python tests.Python tests for tests.test_data_storage.test_save_rates_to_csv_append_file.executor": "Run",
-    "Python tests.Python tests for tests.test_data_storage.test_save_rates_to_csv_no_data.executor": "Run",
-    "Python tests.Python tests for tests.test_data_storage.test_save_rates_to_scv_create_file.executor": "Run",
-    "Python tests.Python tests for tests.test_exchhange_api.TestExchangeApi.executor": "Run",
-    "Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api.executor": "Run",
-    "Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api_connection_error.executor": "Run",
-    "Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api_error.executor": "Run",
-    "Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api_http_error.executor": "Run",
-    "Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api_success.executor": "Run",
-    "Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api_timeout.executor": "Run",
-    "Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api_unexpected_error.executor": "Run",
-    "Python tests.Python tests for tests.test_input_handler.test_get_action_buy.executor": "Run",
-    "Python tests.Python tests for tests.test_input_handler.test_get_action_direct.executor": "Run",
-    "Python tests.Python tests for tests.test_input_handler.test_get_action_sell.executor": "Run",
-    "Python tests.Python tests for tests.test_input_handler.test_get_amount_valid.executor": "Run",
-    "Python tests.Python tests for tests.test_input_handler.test_get_currency.executor": "Run",
-    "Python tests.Python tests for tests.test_input_handler.test_get_repeat.executor": "Run",
-    "Python tests.Python tests for tests.test_input_handler.test_get_repeat_no.executor": "Run",
-    "Python tests.Python tests for tests.test_input_handler.test_get_repeat_yes.executor": "Run",
-    "Python tests.Python tests for tests.test_input_handler.test_get_valid_source_currency_base.executor": "Run",
-    "Python tests.Python tests for tests.test_input_handler.test_get_valid_source_currency_from_rates.executor": "Run",
-    "Python tests.Python tests for tests.test_input_handler.test_get_valid_source_currency_retry.executor": "Run",
-    "Python tests.Python tests for tests.test_output_handler.test_display_currencies_only.executor": "Run",
-    "Python tests.Python tests for tests.test_output_handler.test_display_currencies_only_empty.executor": "Run",
-    "Python tests.Python tests for tests.test_output_handler.test_display_rates.executor": "Run",
-    "Python tests.Python tests for tests.test_output_handler.test_display_rates_empty.executor": "Run",
-    "Python tests.Python tests for tests.test_output_handler.test_display_transaction.executor": "Run",
-    "Python tests.Python tests for tests.test_rate_service.test_get_rates_base_none.executor": "Run",
-    "Python tests.Python tests for tests.test_rate_service.test_get_rates_rates_empty.executor": "Run",
-    "Python tests.Python tests for tests.test_rate_service.test_get_rates_success.executor": "Run",
-    "Python tests.Python tests for tests.test_rate_service.test_validate_target_currency_error_message.executor": "Run",
-    "Python tests.Python tests for tests.test_rate_service.test_validate_target_currency_failure.executor": "Run",
-    "Python tests.Python tests for tests.test_rate_service.test_validate_target_currency_success.executor": "Run",
-    "Python tests.Python tests in test_converter.py.executor": "Run",
-    "Python tests.Python tests in test_data_storage.py.executor": "Run",
-    "Python tests.Python tests in test_exchhange_api.py.executor": "Run",
-    "Python tests.Python tests in test_input_handler.py.executor": "Run",
-    "Python tests.Python tests in test_output_handler.py.executor": "Run",
-    "Python tests.Python tests in test_rate_service.py.executor": "Run",
-    "Python tests.Python tests in tests.executor": "Run",
-    "Python.charts.executor": "Run",
-    "Python.converter.executor": "Run",
-    "Python.exchange_api.executor": "Run",
-    "Python.input_handler.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.output_handler.executor": "Run",
-    "Python.test_converter.executor": "Run",
-    "Python.trend_service.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "ai.playground.ignore.import.keys.banner.in.settings": "true",
-    "git-widget-placeholder": "master",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_all.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_buy.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_buy_calculation.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_calculate_cross_rate_other_currency.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_calculate_cross_rate_other_currency_to_base.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_calculate_cross_rate_same_currency_return_1.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_cross_currency_conversion.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_process_transaction_buy.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_process_transaction_invalid_action.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_process_transaction_sell.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_safe_process_transaction_success.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_safe_process_transaction_success_unexpected_error.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_safe_process_transaction_success_value_error.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_sell.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_source_not_in_rates_raises.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_converter.test_target_not_in_rates_raises.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_data_storage.test_save_rates_to_csv_append_file.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_data_storage.test_save_rates_to_csv_no_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_data_storage.test_save_rates_to_scv_create_file.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_exchhange_api.TestExchangeApi.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api_connection_error.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api_error.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api_http_error.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api_success.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api_timeout.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_exchhange_api.test_get_latest_rate_by_api_unexpected_error.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_input_handler.test_get_action_buy.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_input_handler.test_get_action_direct.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_input_handler.test_get_action_sell.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_input_handler.test_get_amount_valid.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_input_handler.test_get_currency.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_input_handler.test_get_repeat.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_input_handler.test_get_repeat_no.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_input_handler.test_get_repeat_yes.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_input_handler.test_get_valid_source_currency_base.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_input_handler.test_get_valid_source_currency_from_rates.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_input_handler.test_get_valid_source_currency_retry.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_output_handler.test_display_currencies_only.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_output_handler.test_display_currencies_only_empty.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_output_handler.test_display_rates.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_output_handler.test_display_rates_empty.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_output_handler.test_display_transaction.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_rate_service.test_get_rates_base_none.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_rate_service.test_get_rates_rates_empty.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_rate_service.test_get_rates_success.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_rate_service.test_validate_target_currency_error_message.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_rate_service.test_validate_target_currency_failure.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for tests.test_rate_service.test_validate_target_currency_success.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_converter.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_data_storage.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_exchhange_api.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_input_handler.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_output_handler.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_rate_service.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in tests.executor&quot;: &quot;Run&quot;,
+    &quot;Python.charts.executor&quot;: &quot;Run&quot;,
+    &quot;Python.converter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.exchange_api.executor&quot;: &quot;Run&quot;,
+    &quot;Python.input_handler.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.order_service.executor&quot;: &quot;Run&quot;,
+    &quot;Python.order_storage.executor&quot;: &quot;Run&quot;,
+    &quot;Python.output_handler.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_converter.executor&quot;: &quot;Run&quot;,
+    &quot;Python.trend_service.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Anna\PycharmProjects\CodeRedCurrencyExchangeProject\ui" />
@@ -313,7 +313,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773356216154</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Charts added">
+      <option name="closed" value="true" />
+      <created>1775219225580</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1775219225580</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,7 +335,8 @@
     <MESSAGE value="Clearer main, architecture improvements" />
     <MESSAGE value="unit tests added" />
     <MESSAGE value="conversion logic updated, unit tests added" />
-    <option name="LAST_COMMIT_MESSAGE" value="conversion logic updated, unit tests added" />
+    <MESSAGE value="Charts added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Charts added" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CodeRedCurrencyExchangeProject$.coverage" NAME=" Coverage Results" MODIFIED="1773235981037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
