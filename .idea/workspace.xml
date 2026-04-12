@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b6350b0-cb8f-4f93-86cc-d905d5c3aaf2" name="Changes" comment="Charts added">
-      <change afterPath="$PROJECT_DIR$/services/order_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/order_storage.py" afterDir="false" />
+    <list default="true" id="0b6350b0-cb8f-4f93-86cc-d905d5c3aaf2" name="Changes" comment="Orders added and main refactored">
+      <change afterPath="$PROJECT_DIR$/handlers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/trend_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/services/trend_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/data_storage.py" beforeDir="false" afterPath="$PROJECT_DIR$/storage/data_storage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/input_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/input_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/output_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui/output_handler.py" afterDir="false" />
     </list>
@@ -321,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775219225580</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Orders added and main refactored">
+      <option name="closed" value="true" />
+      <created>1775939724662</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1775939724662</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,7 +344,8 @@
     <MESSAGE value="unit tests added" />
     <MESSAGE value="conversion logic updated, unit tests added" />
     <MESSAGE value="Charts added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Charts added" />
+    <MESSAGE value="Orders added and main refactored" />
+    <option name="LAST_COMMIT_MESSAGE" value="Orders added and main refactored" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CodeRedCurrencyExchangeProject$.coverage" NAME=" Coverage Results" MODIFIED="1773235981037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

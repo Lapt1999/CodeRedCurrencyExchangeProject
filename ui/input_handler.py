@@ -5,13 +5,14 @@ def get_main_action():
     print('1 - Convert currency')
     print('2 - Create order')
     print('3 - Check orders')
-    print('4 - Exit\n')
+    print('4 - View orders')
+    print('5 - Exit\n')
 
     while True:
         choice = input('Your choice: ').strip()
-        if choice in ('1', '2', '3', '4'):
+        if choice in ('1', '2', '3', '4', '5'):
             return choice
-        print('Please enter either "1" or "2" or "3" or "4"')
+        print('Please enter either "1" or "2" or "3" or "4" or "5"')
 
 def get_action():
     # Ask user for action: buy or sell

@@ -28,6 +28,3 @@ def save_rates_to_csv(base, rates, filename='data/exchange_rates.csv'):
 
         for currency, rate in rates.items():
             writer.writerow([date, base, currency, rate])
-
-
-    print(f'\nData successfully saved to csv file {filename}.')
